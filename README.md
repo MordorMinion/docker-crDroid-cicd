@@ -1,6 +1,7 @@
 # docker-crdroid-cicd
 
 Docker image to generate builds of crDroid. 
+
 This is current NOT WORKING
 
 How to use:
@@ -26,6 +27,7 @@ services:
         image: "image name from docker image ls"
 ```
 7. docker compose up -d
+
 Thanks to:
 - crDroid team
 - LineageOS team
