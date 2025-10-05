@@ -1,6 +1,8 @@
 # docker-crdroid-cicd
 
-Docker image to generate builds of crDroid. 
+Docker image to generate builds of crDroid. Currently attempting to automate builds of crDroid 12 (based on Android 16 and LineageOS 23.0) for the Sony Xperia 1 V (pdx234). 
+
+See local_manifests/manifest.xml for the sources for this device. 
 
 This is current NOT WORKING
 
