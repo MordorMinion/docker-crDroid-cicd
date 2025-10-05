@@ -1,0 +1,25 @@
+<manifest>
+    <!-- Remotes are places you get repositories from. The name is arbitrary -->
+    <remote name="blackshibe" fetch="https://github.com/blackshibe"/>
+    <remote name="LineageOS" fetch="https://github.com/LineageOS"/>
+    <remote name="MordorMinion" fetch="https://github.com/MordorMinion"/>
+
+    <!-- The device tree as mentioned above. This one is commonized, meaning non-device specific changes are in another repo (sm8550-common) -->
+    <project path="device/sony/pdx234" name="cr_android_device_sony_pdx234" remote="MordorMinion" revision="lineage-23.0" />
+
+    <!-- path is the path the repo will be cloned to, name is the name of the repository, the remote is the remote from above, revision is the branch  -->
+<!--    <project path="device/sony/sm8550-common" name="android_device_sony_sm8550-common" remote="blackshibe" revision="lineage-21" /> -->
+    <project path="device/sony/sm8550-common" name="android_device_sony_sm8550-common" remote="LineageOS" revision="lineage-23.0" />
+
+    <!-- Device kernel. Sometimes you need additional repos related -->
+    <project path="kernel/sony/sm8550" name="android_kernel_sony_sm8550" remote="LineageOS" revision="lineage-23.0" />
+    <project path="kernel/sony/sm8550-devicetrees" name="android_kernel_sony_sm8550-devicetrees" remote="LineageOS" revision="lineage-23.0" />
+    <project path="kernel/sony/sm8550-modules" name="android_kernel_sony_sm8550-modules" remote="LineageOS" revision="lineage-23.0" />
+
+    <!-- Vendor files. These are commonized as well to match the device trees -->
+    <project path="vendor/sony/pdx234" name="proprietary_vendor_sony_pdx234" remote="blackshibe" revision="lineage-22.2" />
+    <project path="vendor/sony/sm8550-common" name="proprietary_vendor_sony_sm8550-common" remote="blackshibe" revision="lineage-22.2" />
+
+    <!-- You can also delete projects from the main build manifest -->
+    <!-- <remove-project name="frameworks/base" /> -->
+</manifest>
