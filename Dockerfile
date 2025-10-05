@@ -1,5 +1,5 @@
 FROM ubuntu:22.04@sha256:1b8d8ff4777f36f19bfe73ee4df61e3a0b789caeff29caa019539ec7c9a57f95
-LABEL maintainer="Nicola Corna <nicola@corna.info>"
+LABEL maintainer="Testbuild <example@test.info>"
 
 # Environment variables
 #######################
@@ -35,9 +35,9 @@ ENV CCACHE_SIZE=50G
 # We need to specify the ccache binary since it is no longer packaged along with AOSP
 ENV CCACHE_EXEC=/usr/bin/ccache
 
-# Environment for the LineageOS branches name
-# See https://github.com/LineageOS/android/branches for possible options
-ENV BRANCH_NAME='lineage-22.1'
+# Environment for the crDroid branches name
+# See https://github.com/crdroidandroid/android/branches for possible options
+ENV BRANCH_NAME='16.0'
 
 # Environment for the device list (separate by comma if more than one)
 # eg. DEVICE_LIST=axolotl,barbet,beckham
@@ -51,8 +51,8 @@ ENV RELEASE_TYPE='UNOFFICIAL'
 ENV OTA_URL=''
 
 # User identity
-ENV USER_NAME='LineageOS Buildbot'
-ENV USER_MAIL='lineageos-buildbot@docker.host'
+ENV USER_NAME='crDroid Buildbot'
+ENV USER_MAIL='crDroid-buildbot@docker.host'
 
 # Include proprietary files, downloaded automatically from github.com/TheMuppets/ and gitlab.com/the-muppets/
 # Only some branches are supported
@@ -144,8 +144,8 @@ ENV APPLY_PATCHES=true
 ENV PREPARE_BUILD_ENVIRONMENT=true
 ENV CALL_BREAKFAST=true
 ENV CALL_MKA=true
-ENV ZIP_UP_IMAGES=false
-ENV MAKE_IMG_ZIP_FILE=false
+ENV ZIP_UP_IMAGES=true
+ENV MAKE_IMG_ZIP_FILE=true
 ENV APPLY_PI_PATCH=true
 
 # You can optionally specify a USERSCRIPTS_DIR volume containing these scripts:
