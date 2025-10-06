@@ -16,13 +16,13 @@ out/soong/.intermediates/vendor/sony/pdx234/libcammw/android_vendor_arm64_armv8-
 out/soong/.intermediates/vendor/sony/pdx234/libcammw/android_vendor_arm64_armv8-2a-dotprod_shared/libcammw.so: note:   Android.mk: LOCAL_CHECK_ELF_FILES := false
 ```
 
-I will need to apply a blob_fixup to fix this
+I will need to apply a blob_fixup to the extraction script to fix this
 e.g. 
 ```
 blob_fixup() {
     case "$1" in
-        vendor/lib64/libcammw.so)
-            sed -i 's|android.hardware.light-V1-ndk_platform|android.hardware.light-V1-ndk|g' "$2"
+        vendor/lib64/libcammw.so|vendor/lib/libcammw.so)
+            patchelf --replace-needed android.hardware.light-V1-ndk_platform.so android.hardware.light-V1-ndk.so "$2"
             ;;
     esac
 }
